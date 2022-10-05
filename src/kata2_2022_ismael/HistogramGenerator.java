@@ -6,20 +6,20 @@ import java.util.Map;
 
 
 public class HistogramGenerator<T> {
-    private final T[] data;
+    private final T[] dato;
 
     public HistogramGenerator(T[] data) {
-        this.data = data;
+        this.dato = data;
     }
 
     public T[] getData() {
-        return data;
+        return dato;
     }
 
     public Map<T,Integer> getHistogram(){
         Map<T,Integer> map = new HashMap<>();
-        for (int i = 0; i < data.length; i++) {
-            map.put(data[i], map.containsKey(data[i])? map.get(data[i]) +1 : 1);
+        for (int i = 0; i < dato.length; i++) {
+            map.put(dato[i], map.containsKey(dato[i])? map.get(dato[i]) +1 : 1);
         }
         return map;
     }
